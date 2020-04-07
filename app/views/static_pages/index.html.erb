@@ -1,0 +1,16 @@
+<%= form_with method: :get, local: true do |f| %>
+  <%= f.label :user_id, "Flickr ID" %>
+  <%= f.text_field :user_id, required: true %>
+  <%= f.submit "Search" %>
+<% end %>
+
+<div class="wrapper">
+  <% @photos.each do |photo| %>
+    <div class="photo">
+      <%= link_to "https://farm#{photo.farm}.static.flickr.com/#{photo.server}/#{photo.id}_#{photo.secret}.jpg" do %>
+        <%= image_tag "https://farm#{photo.farm}.static.flickr.com/#{photo.server}/#{photo.id}_#{photo.secret}.jpg" %></a>
+        <p><%= photo.title %></p>
+      <% end %>
+    </div>
+  <% end if !@photos.nil?%>
+</div>

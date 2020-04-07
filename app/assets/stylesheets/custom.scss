@@ -1,0 +1,9 @@
+.photo {
+  width: 300px;
+  display: inline-block;
+  img {
+    width: 100%;
+    height: 334px;
+    object-fit: cover;
+  }
+}
